@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchAllReviews } from "../utils/utils";
+import "./Home.css";
 
 const Home = () => {
 

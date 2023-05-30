@@ -6,3 +6,8 @@ img{
 .title{
     color: rgb(201, 56, 4);
 }
+
+.reviews{
+    border: solid black;
+    padding: 4%;
+}
