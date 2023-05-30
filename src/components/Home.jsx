@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchAllReviews } from "../utils/utils";
 import "./home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
 
@@ -14,11 +15,12 @@ const Home = () => {
      }  ) 
     }, [])
 
+
     return (
     <section>
     <h1>NC games home!</h1>
     <h2>Newest reviews:</h2>
-    <p>
+    <>
     {isLoading ? <p>Loading.. </p> :
             <ul>
                     {recentReviews.map((review) => {
@@ -26,10 +28,10 @@ const Home = () => {
                 <h3>{review.title}</h3>
                 <p> Created at: {review.created_at.slice(0, 10)}</p>
             
-                <button>See full review!</button>
+                <button><Link to = {`/reviews/${review.review_id}`}>See full review!</Link></button>
                 </li>;})}
                 </ul>}
-    </p>
+    </>
     
      </section> );
 }

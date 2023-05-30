@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchAllReviews } from "../utils/utils";
 
 import "./Reviews.css";
+import { Link } from "react-router-dom";
 
 
 const Reviews = () => {
@@ -29,7 +30,7 @@ const Reviews = () => {
                 <p>Game category: {review.category}</p>
                 <img src={review.review_img_url} alt={`image of ${review.review_img_url}`} />
                 <p>Votes: {review.votes}</p>
-                <button>See full review!</button>
+                <button><Link to = {`/reviews/${review.review_id}`}>See full review!</Link></button>
                 </li>;
                         
                         
