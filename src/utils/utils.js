@@ -49,3 +49,19 @@ export const fetchReviewByID = (ID) => {
     })
 
   }
+
+  export const postNewComment = (comment, ID) => {
+   
+    const url=`/reviews/${Number(ID)}/comments`
+    
+    
+    return ncGamesApi
+    .post(`/reviews/${Number(ID)}/comments`, comment)
+    .then(({data})=>{
+      return (data)
+    })
+    // .catch(err => {
+    //     return(err);
+    //   })
+   
+  }
