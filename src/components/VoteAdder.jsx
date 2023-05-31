@@ -8,6 +8,7 @@ const [currentVotes, setCurrentVotes] = useState (votes)
 
    const handleAddClick = () => {
     setCurrentVotes(currentVotes => +currentVotes+1)
+    setErr(null)
     incrementVote(1,review_id)
     .catch(err => {
         setCurrentVotes((currentVotes) => currentVotes - 1);
@@ -18,6 +19,7 @@ const [currentVotes, setCurrentVotes] = useState (votes)
 
    const handleMinusClick = () => {
     setCurrentVotes(currentVotes => +currentVotes-1)
+    setErr(null)
     incrementVote(-1,review_id)
     .catch(err => {
         setCurrentVotes((currentVotes) => currentVotes + 1);
