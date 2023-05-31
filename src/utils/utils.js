@@ -15,3 +15,15 @@ export const fetchAllReviews = () => {
         console.log(err)
     });
 };
+
+export const fetchReviewByID = (ID) => {
+   
+    return ncGamesApi
+      .get(`/reviews/${ID}`)
+      .then(({ data }) => {
+      return(data);
+      })
+      .catch(err => {
+      return(err);
+    })
+  }
