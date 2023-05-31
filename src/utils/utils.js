@@ -27,3 +27,15 @@ export const fetchReviewByID = (ID) => {
       return(err);
     })
   }
+
+  export const fetchCurrentComments = (ID) => {
+
+    return ncGamesApi
+    .get(`/reviews/${ID}/comments`)
+    .then(({data}) => {
+        return (data)
+    })
+    .catch(err => {
+        return(err);
+      })
+  }
