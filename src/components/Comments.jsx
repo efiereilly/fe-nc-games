@@ -1,5 +1,6 @@
 import { fetchCurrentComments } from "../utils/utils"
 import { useEffect, useState } from "react";
+import "./Comments.css";
 
 const Comments = ({review_id}) => {
 
@@ -19,18 +20,18 @@ const Comments = ({review_id}) => {
     return ( <section>
         <h1>Comments: </h1>
         
-        <ul>
+       
             {currentComments.map(comment => {
-                return <li className="comments" key={comment.comment_id}>
+                return <article className="comments" key={comment.comment_id}>
                     
                     
                    <p>"{comment.body}"</p>
                    <p>Author : {comment.author} at {comment.created_at.slice(0,16)}</p>
                    <p>Votes : {comment.votes}</p>
                   
-                    </li>
+                    </article>
             })}
-        </ul>
+        
         </section>
      );
 }
