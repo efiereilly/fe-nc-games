@@ -28,7 +28,7 @@ const Comments = ({review_id}) => {
                    <p>"{comment.body}"</p>
                    <p>Author : {comment.author} at {comment.created_at.slice(0,16)}</p>
                    <p>Votes : {comment.votes}</p>
-                  
+                             
                     </article>
             })}
         
