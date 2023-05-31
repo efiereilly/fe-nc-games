@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchAllReviews } from "../utils/utils";
-// import "./home.css";
+import "./Home.css";
 import { Link } from "react-router-dom";
 
 const Home = () => {
