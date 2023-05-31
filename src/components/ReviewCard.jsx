@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchReviewByID } from "../utils/utils";
 import "./ReviewCard.css";
+import Comments from "./Comments";
 
 
 const ReviewCard = () => {
@@ -38,7 +39,7 @@ const ReviewCard = () => {
                 <p>Designer: {currentReview.designer}</p>
                 <p>Owner: {currentReview.owner}</p>
                 <p>Votes: {currentReview.votes}</p>
-               
+               <Comments review_id = {review_id}/>
             </article>
             }
             
