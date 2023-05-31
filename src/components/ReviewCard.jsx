@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 import { fetchReviewByID } from "../utils/utils";
 import "./ReviewCard.css";
 import Comments from "./Comments";
+import VoteAdder from "./VoteAdder";
+
 
 
 const ReviewCard = () => {
@@ -38,7 +40,8 @@ const ReviewCard = () => {
                 <p>Game category: {currentReview.category}</p>
                 <p>Designer: {currentReview.designer}</p>
                 <p>Owner: {currentReview.owner}</p>
-                <p>Votes: {currentReview.votes}</p>
+            
+                <VoteAdder votes={currentReview.votes} review_id = {currentReview.review_id}/>
                <Comments review_id = {review_id}/>
             </article>
             }

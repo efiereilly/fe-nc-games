@@ -39,3 +39,13 @@ export const fetchReviewByID = (ID) => {
         return(err);
       })
   }
+
+  export const incrementVote = (num, ID) => {
+
+    return ncGamesApi
+    .patch(`/reviews/${ID}`, { inc_votes : num })
+    .then(({data} )=> {
+        return data.review.votes
+    })
+
+  }
