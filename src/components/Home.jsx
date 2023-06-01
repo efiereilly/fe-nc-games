@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchAllReviews } from "../utils/utils";
+import { fetchReviews } from "../utils/utils";
 import "./Home.css";
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,7 @@ const Home = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        fetchAllReviews().then(({ reviews }) => {
+        fetchReviews().then(({ reviews }) => {
             setRecentReviews(reviews.slice(0,3))
             setIsLoading(false)
      }  ) 

@@ -5,7 +5,7 @@ const ncGamesApi = axios.create({
   baseURL: "https://nc-games-7q91.onrender.com/api",
 });
 
-export const fetchAllReviews = () => {
+export const fetchReviews = () => {
   return ncGamesApi
     .get(`/reviews`)
     .then(({ data }) => {
@@ -26,6 +26,17 @@ export const fetchReviewByID = (ID) => {
       .catch(err => {
       return(err);
     })
+  }
+
+  export const fetchReviewsByCategory = (category) => {
+    return ncGamesApi
+    .get(`/reviews?category=${category}`)
+    .then(({ data }) => {
+      return data;
+    })
+    .catch(err => {
+        console.log(err)
+    });
   }
 
   export const fetchCurrentComments = (ID) => {
