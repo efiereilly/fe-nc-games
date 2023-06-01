@@ -60,8 +60,6 @@ export const fetchReviewByID = (ID) => {
     .then(({data})=>{
       return (data)
     })
-    // .catch(err => {
-    //     return(err);
-    //   })
+
    
   }
