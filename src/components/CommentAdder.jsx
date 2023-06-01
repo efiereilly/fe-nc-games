@@ -29,6 +29,7 @@ const CommentAdder = ({ review_id }) => {
       postNewComment(newComment, review_id)
         .then((comment) => {
           setIsPosted(true);
+          
           setNewComment((currComment) => {
             return { username: "", body: "" };
           });
