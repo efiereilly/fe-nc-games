@@ -1,8 +1,9 @@
 import { fetchCurrentComments } from "../utils/utils"
 import { useEffect, useState } from "react";
 import "./Comments.css";
+import CommentAdder from "./CommentAdder";
 
-const Comments = ({review_id}) => {
+const Comments = ({review_id, newComment}) => {
 
 
     const [currentComments, setCurrentComments] = useState ([])
@@ -13,11 +14,12 @@ const Comments = ({review_id}) => {
             setCurrentComments(comments)
             setIsLoading(false)
      }  ) 
-    }, [])
+    }, [newComment])
 
     if (currentComments.length==0){return <h2>No current comments</h2>}
    
     return ( <section>
+        
         <h1>Comments: </h1>
         
        
@@ -37,3 +39,4 @@ const Comments = ({review_id}) => {
 }
  
 export default Comments;
+
