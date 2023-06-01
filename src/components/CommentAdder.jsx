@@ -57,13 +57,6 @@ const CommentAdder = ({ review_id }) => {
             placeholder="write comment"
           ></textarea>
           <label htmlFor="username">User:</label>
-          {/* <input
-                     id="username"
-                     type="text"
-                     value={newComment.username}
-                     onChange={handleCommentChange}
-                     placeholder="author.."
-                     ></input> */}
 
           <select name="users" id="username" value={newComment.username}
                      onChange={handleCommentChange}>
