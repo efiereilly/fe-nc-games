@@ -40,6 +40,7 @@ const Reviews = () => {
         value={category}
         onChange={handleCategoryChange}
       >
+        <option >select a category</option>
         <option value="strategy">strategy</option>
         <option value="dexterity">dexterity</option>
         <option value="hidden-roles">hidden-roles</option>
