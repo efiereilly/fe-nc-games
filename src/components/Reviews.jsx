@@ -1,38 +1,41 @@
 import { useEffect, useState } from "react";
-import { fetchReviews, fetchReviewsByCategory } from "../utils/utils";
+import { fetchReviews } from "../utils/utils";
 
 import "./Reviews.css";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 
 const Reviews = () => {
+  const {category} = useParams()
   const [allReviews, setAllReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [category, setCategory]=useState('')
+  const [selectedCategory, setSelectedCategory] = useState('')
+
 
   function handleCategoryChange(event) {
-    setCategory(event.target.value);
+    
+    setSelectedCategory(event.target.value)
   }
 
+
   useEffect(() => {
-    fetchReviews().then(({ reviews }) => {
+    fetchReviews(category).then(({ reviews }) => {
       setAllReviews(reviews);
       setIsLoading(false);
     });
-  }, []);
+  }, [category]);
+
 
   
-
-  console.log(category)
 
   return (
 
     <section>
-        <form >
+        <form>
       <label htmlFor="category">Filter by category:</label>
 
       <select
-        name="users"
+        
         id="category"
         value={category}
         onChange={handleCategoryChange}
@@ -45,8 +48,8 @@ const Reviews = () => {
         <option value="deck-building">deck-building</option>
         <option value="engine-building">engine-building</option>
       </select>
-      <button id="filter" type="submit">
-      <Link to = {`/reviews/category/${category}`}>Filter</Link>
+      <button id="filter" type="submit" >
+      <Link to = {`/reviews/category/${selectedCategory}`}>Filter</Link>
           </button></form>
       <h1>Reviews:</h1>
       {isLoading ? (
